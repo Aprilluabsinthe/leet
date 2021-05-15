@@ -1,5 +1,3 @@
-package java.StringManipulation;
-
-public class 12 Integer to Roman {
+public class 12_Integer_to_Roman {
     
 }
