@@ -22,7 +22,7 @@ func helper(root *TreeNode, low int, upper int) bool {
 
 func isValidBST2(root *TreeNode) bool {
 	stack := []*TreeNode{}
-	inorder = math.MinInt64
+	inorder := math.MinInt64
 
 	for len(stack) > 0 || root != nil {
 		for root != nil {
