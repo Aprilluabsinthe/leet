@@ -57,6 +57,27 @@ public class 98_Validate_Binary_Search_Tree{
         }
     }
 
+    boolean ans = true;
+
+    public boolean isValidBST2(TreeNode root) {
+        helper(root, Long.MIN_VALUE, Long.MAX_VALUE);
+        return ans;
+    }
+
+    public void helper(TreeNode root, long low, long high){
+        if(root == null){
+            ans = ans && true;
+            return;
+        }
+
+        if(root.val <= low || root.val >= high){
+            ans = ans && false;
+            return;
+        }
+        helper(root.left , low , root.val);
+        helper(root.right , root.val , high);
+    }
+
     public class MainClass {
         public static TreeNode stringToTreeNode(String input) {
             input = input.trim();
