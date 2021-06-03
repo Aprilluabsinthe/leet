@@ -33,7 +33,7 @@ class Solution:
                 if i < size -1:
                     node.next = queue[0]
                 if node.left:
-                    queue.append(node.left)
+                    queue.append(inode.left)
                 if node.right:
                     queue.append(node.right)
         return root
