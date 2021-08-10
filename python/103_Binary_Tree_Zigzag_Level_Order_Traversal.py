@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # recursive
     def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
         res = []
         def tranversal(root:TreeNode, level:int):
@@ -45,7 +46,7 @@ class Solution:
         dfs(root,0)
         return res
         
-        
+    # BFS 
     def zigzagLevelOrderBFS(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root:
             return root
