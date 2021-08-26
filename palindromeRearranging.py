@@ -15,3 +15,5 @@ def palindromeRearranging(inputString):
             numOdd -= 1
     
     return numOdd == 0
+
+    # return sum([inputString.count(i)%2 for i in set(inputString)]) <= 1
