@@ -21,4 +21,18 @@ class Solution {
         }
         return index;
     }
+
+    // by 0901
+    public int removeDuplicates2(int[] nums) {
+        int n = nums.length;
+        if(nums.length <= 2) return nums.length;
+        int index = 2;
+        for(int i = 2 ; i < n ; i++){
+            if(nums[i] != nums[index-2]){
+                nums[index] = nums[i];
+                index++;
+            }
+        }
+        return index;
+    }
 }
