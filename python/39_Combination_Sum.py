@@ -1,26 +1,44 @@
 class Solution:
-    def backtrack(self, candidates: List[int], target: int, index:int, curPath:List[int], res: List[List[int]] ):
-        if(target == 0):
-            res.append(curPath[:])
-            return
-        if(target < 0 or index == len(candidates)):
-            return
+    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+        candidates.sort()
+        n = len(candidates)
+        res = []
+        def dfs(index, curSum, curPath):
+            if curSum > target or index == n:
+                return
+            if curSum == target:
+                res.append(curPath[:])
+                return
+            dfs(index , curSum + candidates[index], curPath+[candidates[index]])
+            dfs(index+1 , curSum, curPath)
         
-        for i in range(index, len(candidates)):
-            if target-candidates[i] < 0:
-                break
-            
-            curPath.append(candidates[i])
-            self.backtrack(candidates,target-candidates[i],i,curPath,res)
-            curPath.pop()
+        dfs(0,0,[])
+        return res
 
     def combinationSum1(self, candidates: List[int], target: int) -> List[List[int]]:
         candidates.sort()
+        n = len(candidates)
         res = []
-        self.backtrack(candidates,target,0,[],res)
-        return res
 
-        def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        def dfs(index, curSum, curPath):
+            if curSum > target or index == n:
+                return
+            if curSum == target:
+                res.append(curPath[:])
+                return
+            for i in range(index, n):
+                if curSum + candidates[i] > target:
+                    break
+                curPath.append(candidates[i])
+                dfs(i, curSum + candidates[i], curPath)
+                curPath.pop()
+
+        curPath = []
+        dfs(0,0,curPath)
+        return res
+            
+
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         candidates.sort()
         n = len(candidates)
         res = []
@@ -31,9 +49,9 @@ class Solution:
                 res.append(curPath[:])
                 return
             for i in range(index, n):
-                if curSum + candidates[index] > target:
+                if curSum + candidates[i] > target:
                     break
-                helper(index, curSum + candidates[index] ,curPath+[candidates[index]])
+                helper(i, curSum + candidates[i] ,curPath+[candidates[i]])
             
         helper(0,0,[])
         return res
