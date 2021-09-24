@@ -55,7 +55,7 @@ class minStack{
 // 2000 -> 10,000
 
 // 1. send heavy request to website 
-// 2. operations  click buttons / update reviews / reqeust pictures(comments)
+// 2. operations  click buttons / update reviews / request pictures(comments)
 // script DOS 
 // time window -> {timestamp, failed/success} 
 // -------------[----[--]----]--------------------------

@@ -19,9 +19,9 @@ public class shuffle_02 {
 
         // time O(lenA+LenB)
         // space O(1)
-        
+
         // interate B from end to start 
-        while(pointB >= 0){ // Todo : find A's limatation of range
+        while(pointB >= 0){ // Todo : find A's limitation of range
             if(pointerA >= 0 && A[pointerA] > B[pointerB]){ // A[pointerA] > B[pointerB]
                 // what if 
                 A[pointEnd--] = A[pointerA--];
