@@ -1,0 +1,129 @@
+Sort Stack: Write a program to sort a stack such that the smallest items are on the top. You can use an additional temporary stack, but you may not copy the elements into any other data structure (such as an array). The stack supports the following operations: push, pop, peek, and is Empty.
+// an additional temporary stack  
+// input : a stack <Integer> random order
+// use only helper stack
+// return : the original stack  ascending order
+
+// input : -> top [6,3,4,2,5,1]
+
+// helper stack : [ ]
+
+// original [6,3,4,2,5,1] -> ascending order
+//  helpr [] --> descending order by pop()
+// -> biggest num on top 
+
+
+// input : -> top [ 6, 4,2,5,1] temp = 3
+
+// pop 6
+
+// helper stack : [ 6, 5,4, 3, 2,1 ] 
+
+
+// Space com O(n) n size of stack=k
+// Time com : O(n^2) 
+public static void sortStack( Stack<Integer> stack ){
+ // helper
+Stack<Integer> helper = new Stack<Integer>();
+
+// pop elements in s
+
+while(!stack.isEmpty()){
+	Int top = stack.pop();
+while( !helper.isEmpty() && helper.peek() > top ){
+	stack.push(helper.pop());
+}
+helper.push(top);
+}	
+
+// a helper stack with descender order
+
+while(!helper.isEmpty() ){
+	stack.push(helper.pop());
+}
+} 
+
+
+
+
+First Common Ancestor: Design an algorithm and write code to find the first common ancestor of two nodes in a binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not necessarily a binary search tree.
+Node {
+ 	Value
+Left;
+Right;
+parent;
+}
+
+// Node p,q
+// p -> root find it’s every parent node
+	// parent node -> q a child?
+
+// intercetion nodes 
+// root ?
+
+
+// Space : O( 1 )
+// time : O( levelp ) O( levelq ) - > O( n )
+public static Node findAncestor(Node p, Node q){
+	if( p == null || q == null ) return null;
+	
+	Int levelp = countDepth(p);
+Int levelq = countDepth(q);
+
+
+if (levelp > levelq)  // p is deeper{
+	Int gap = levelp - levelq;
+	Int i = 0;
+	while( i < gap){
+		p = p.parent;
+}
+}
+else if (levelp < levelq)  { // q is deeper
+	Int gap = levelq - levelp;
+	Int i = 0;
+	while( i < gap){
+		q = q.parent;
+}
+}
+
+// on the same level
+
+while( p.parent != null && q.parent != null  ){
+	if( p == q ){
+		Return p;
+}
+	P = p.parent;
+	Q = q.parent;
+}
+Return null;
+}
+
+// root - level 0 
+// child level 1
+public static int countDepth(Node p){
+	Int level = 0;
+
+	while( p.parent != null ){ // root
+	P = p.parent;
+	Level ++;
+}
+Return level;
+}
+
+
+
+Private Constructor: In terms of inheritance, what is the effect of keeping a constructor private?
+
+// Inner classes can get access to it
+// sibling classes, inside parent class, sibling be able to use
+
+1Class Parent{
+	2Class child1{
+}
+
+	3Class child2{
+		Private child2(){};
+		4Class grandchild(){
+}
+}
+}

@@ -1,0 +1,97 @@
+Q1: Sort Stack:
+Write a program to sort a stack such that the smallest items are on the top. You can use an additional temporary stack, but you may not copy the elements into any other data structure (such as an array). The stack supports the following operations: push, pop, peek, and is_empty
+Stack<Integer> sort_stack(Stack<Integer> st){
+	Int temp;
+	Stack<Integer> new_st = new Stack<Integer>();
+	while(!st.isEmpty()){
+		Temp = st.pop();
+		while(!new_st.isEmpty()&&temp<new_st.peek()){
+			new_st.push(st.pop());
+		}
+		new_st.push(temp);
+	}
+
+	while(!new_st.isEmpty()){
+		st.push(new_st.pop());
+}
+
+Return st;
+}
+
+
+Q2: check subtree
+T1 and T2 are two very large binary trees, with T1 much bigger than T2. Create an algorithm to determine if T2 is a subtree of T1.
+A tree T2 is a subtree of T1 if there exists a node n in T1 such that the subtree of n is identical to T2. That is, if you cut off the tree at node n, the two trees should be identical.
+// dfs( // recursion
+Base case
+What to do with this node
+All other options
+)
+
+// 3
+// T1 == T2 the same tree
+// T2 is subtree of T1.left
+// T2 is subtree of T1.right
+
+
+
+TreeNode{
+	Int val;
+TreeNode left;
+TreeNode right;
+}
+
+Null 
+
+Value the same value
+
+// T1 == T2??
+
+Boolean isSame(TreeNode t1, TreeNode t2){
+	if(t1==null&&t2==null)
+		Return True;
+	if(t1==null||t2==null)
+		Return False;
+	if(t1.data==t2.data)
+	{
+	if(!isSame(t1.left,t2.left))
+		Return False;
+
+	if(!isSame(t1.right,t2.right))
+	Return False;
+
+}
+
+}
+
+// 3
+// T1 == T2 the same tree
+// T2 is subtree of T1.left
+// T2 is subtree of T1.right
+
+Boolean isSubtree(TreeNode t1, TreeNode t2){
+if(isSame(t1,t2))
+	Return True;
+if(!isSubtree(t1.left,t2)&&!isSubtree(t1.right,t2))
+	Return False;
+
+}
+
+
+Recursive - dfs
+
+Iteration - bfs 
+Q3: Private Constructor
+In terms of inheritance, what is the effect of keeping a constructor private?
+Class One{
+	Class Two{
+
+}
+Class Three{
+	Private Three(){
+}
+	Class Four{
+
+}
+}
+}
