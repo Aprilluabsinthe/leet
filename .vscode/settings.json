@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "java",
-        "CtCI"
+        "CtCI",
+        "Bootcamp"
     ]
 }
