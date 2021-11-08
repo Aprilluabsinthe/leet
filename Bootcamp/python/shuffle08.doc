@@ -1,0 +1,74 @@
+N boxes, 
+each box has a height, width and depth (cannot rotate)
+stack the boxes to be as high as possible (maximize sum of the heights)
+If a box is on another box, its width and depth must be less than the box it’s stacked on
+(python)
+
+
+// list of boxes :  height, width and depth H * W * D -> List[(height, width, depth)]
+// return -> int maxHeight
+// sort it : (h w d) from smallest to largest # 
+// lambda height w,d
+// dp 1-D 
+// definition dp[i] : largest height if put box[i] on top
+// iterate over boxes, from large to small, try to get largest height by putting it on box[j]  : i j
+// 
+[(1, 2, 3)] => 1
+def canBePut(box1, box2)->bool: # true iff box2 can be put on box1
+	Return box1[1] > box2[1] and  box1[2] > box2[2]  
+
+https://docs.python.org/3/library/functions.html#sorted
+
+// time O(N^2)
+
+
+// spce O(N) for dp array
+def maxHeight(A:List[Tuple[int, int, int]])->int:
+	A = sorted(A, key = lambda box : (box[1],box[2]) ,reversed = True) // largest to smallest // sort with width and depth
+	N = len(A) // 
+	Dp = [ box[0] for box in A] // initialization by height
+// now not stacked 
+ans = max(box[0] for box in A) // max single box height
+
+	for i in range(0,n):
+		For j in range(i):
+			If canBePut(A[j],A[i]): // if i can be put on j
+				dp[i] = max(dp[i],dp[j]+A[i][0]) // update dp[i]
+	return max(dp)
+
+
+
+Convert a double in [0, 1) into a binary string.
+Error if you can’t represent the double in 32 bits.
+
+// input : decimal
+// output String representing in binary
+// . 2^-1, 2^-2……..
+//     |
+// while: 
+// num * 2 > 1: fill this digit with 1
+// if not , fill with 0
+// get decimal part of num
+
+
+def convert(val: double): => str
+	If val < 0 or val >=1:
+		Return “Error”
+	
+	Binary = [] // store each digit
+	// O(1)
+	While val > 0:
+		If len(binary) >= 32:
+			Return “Error”
+		R = val * 2
+		if R >= 1:
+			binary.append(“1”)
+			Val = R - 1
+		Else:
+			binary.append(“0”)
+			Val = R
+	// haven't get error and finish the while loop
+	Return “0.” + “”.join(binary)
+
+	
+	
