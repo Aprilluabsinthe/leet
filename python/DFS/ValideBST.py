@@ -1,0 +1,34 @@
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isValidBST1(self, root: Optional[TreeNode]) -> bool:
+        def validate(node,low = -math.inf,high = math.inf):
+            if not node:
+                return True
+            if node.val <= low or node.val >= high:
+                return False
+            return validate(node.left,low,node.val) and validate(node.right,node.val,high)
+        
+        return validate(root)
+    
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        if not root:
+            return True
+        
+        stack = [(root , -math.inf , math.inf)]
+        while stack:
+            root, low, high = stack.pop()
+            if not root:
+                continue
+            val = root.val
+            if val <= low or val >= high:
+                return False
+            else:
+                stack.append([root.left, low, root.val])
+                stack.append([root.right, root.val, high])
+        
+        return True
