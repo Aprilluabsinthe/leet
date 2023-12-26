@@ -320,11 +320,11 @@ Binary search, the workhorse of algorithmic efficiency, often seems straightforw
 
 **1. Interval Invariants: Precision Matters**
 
-Understanding interval invariants is pivotal. If, for instance, the interval is left-closed and right-closed, each binary split must meticulously retain this structure. Subsequent judgments must consistently adhere to the left-closed and right-closed paradigm.
+Understanding interval invariants is pivotal. If, for instance, the interval is left-inclusive and right-inclusive, each binary split must meticulously retain this structure. Subsequent judgments must consistently adhere to the left-inclusive and right-inclusive paradigm.
 
-**2. Open or Closed: Does it Matter?**
+**2. Inclusive or Exclusive: Does it Matter?**
 
-The choice between an open or closed interval is essentially inconsequential. What matters is a clear grasp of elements within the range after each reduction, with a vigilant eye to avoid boundary oversights.
+The choice between an inclusive or exclusive interval is essentially inconsequential. What matters is a clear grasp of elements within the range after each reduction, with a vigilant eye to avoid boundary oversights.
 
 **3. Edge Cases: Tackling Scenarios**
 
@@ -332,7 +332,7 @@ Binary search involves several nuanced scenarios, notably when dealing with boun
 
 **4. Multiple Implementations: Templates for Success**
 
-Binary search exhibits versatility in implementations. Whether the terminus is an open or closed interval can elegantly solve problems, requiring a keen understanding of conditions such as `l < r` or `l <= r`, and the choice between `mid` or `mid ± 1`. After comprehension, memorizing a template streamlines the process, eliminating confusion.
+Binary search exhibits versatility in implementations. Whether the terminus is an inclusive or exclusive interval can elegantly solve problems, requiring a keen understanding of conditions such as `l < r` or `l <= r`, and the choice between `mid` or `mid ± 1`. After comprehension, memorizing a template streamlines the process, eliminating confusion.
 
 **5. Beyond Basics: Varied Applications**
 
