@@ -5,6 +5,7 @@
 1. [Data Structures](#data_structure)
 2. [704. Binary Search](#704)
 3. [27. Remove Element](#27)
+4. [Notes for Today](#notes)
 
 ## References
 Carl's article link: 
@@ -311,7 +312,7 @@ class Solution {
 ```
 
 
-#### Notes of Today
+## Notes for Today <a name="notes"></a>
 
 **About Binary Search:**
 
