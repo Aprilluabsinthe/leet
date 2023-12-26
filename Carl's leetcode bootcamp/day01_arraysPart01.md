@@ -309,3 +309,29 @@ class Solution {
     }
 }
 ```
+
+
+#### Notes of Today
+
+**About Binary Search:**
+
+- The most important thing is to handle binary search properly. Even though binary search seems easy to write, boundary cases still need testing.
+- What is an interval invariant? For example, if the interval is left-closed and right-closed, then every time the interval is bisected, the range is still left-closed and right-closed. When making judgments later, it should always be based on this left-closed and right-closed interval.
+- In fact, it doesn't matter whether the interval is defined as open or closed; you just need to be clear about which elements are within the range after each contraction. Pay attention not to miss the boundaries.
+- Everyone needs to pay attention to several cases of binary search:
+  - When l = 0, r = n, because we cannot access the value at r in the array, `while (l < r)` is the correct way.
+  - When l = 0, r = n - 1, because we can access the value at r in the array, `while (l <= r)` is the correct way. It mainly depends on whether you can access this value.
+- Binary search has multiple implementations; whether the end is an open or closed interval can solve problems of finding a single element and finding boundaries. Just pay attention to whether it's `l < r` or `l <= r`, and whether to take `mid` or `mid ± 1` each time. It is recommended to understand and memorize a template after comprehension to avoid confusion.
+- In fact, binary search has many applications and variations, such as finding the first element greater than the target or the first element satisfying a condition. The essence is to narrow down the interval where the answer lies based on whether the condition of the problem is satisfied. Also, note that the prerequisite for using binary search is a sorted array.
+- The biggest advantage of binary search is its time complexity, which is O(logn). Therefore, whenever you see a sorted array, ask yourself if binary search can be used.
+- Regarding the overflow issue with the binary search mid:
+  - When `mid = (l + r) / 2`, if `l + r` is greater than `INT_MAX` (in C++, the upper limit of the int type), an overflow problem (int type cannot represent that number) may occur. Therefore, writing it as `mid = l + (r - l) / 2` or `mid = l + ((r - l) >> 1)` can avoid overflow problems.
+- For binary positive numbers, right-shifting x bits is equivalent to dividing by 2 to the power of x. So, right-shifting one bit is equivalent to dividing by 2. Using bitwise operations is faster than direct division operations.
+
+**About Removing Elements:**
+
+- The fast pointer can be understood as finding non-target elements in the old array and assigning them to the new array pointed to by the slow pointer, even though they both point to the same array.
+- Common considerations between binary search and removing elements:
+  - These two problems are somewhat similar; they both continuously narrow the distance between left and right. Each time, the judgment involves whether the numbers between left and right satisfy specific conditions. For the "remove elements" approach, it can essentially be understood as taking the element at right (on the right side) to fill the gap in the element at left (on the left side). The gap refers to the numbers that need to be deleted encountered by left during the traversal from left to right, and because the problem says that numbers beyond the length of the array on the right side can be ignored, our perspective is primarily based on left. This perspective might be more intuitive. Thinking of it as filling might change the relative positions of elements, but the problem allows for this.
+  
+- `fast < nums.size()` and `fast <= nums.size() - 1` are almost the same. Why does the second one report an array out-of-bounds error when the array is empty? The `size()` function of a vector returns an unsigned integer, and when the array is empty, it returns 0. Subtracting one from this will cause an overflow.
