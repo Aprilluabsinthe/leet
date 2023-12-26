@@ -319,35 +319,45 @@ class Solution {
 Binary search, the workhorse of algorithmic efficiency, often seems straightforward, but mastering it demands nuanced understanding and strategic testing. Let's delve into some crucial insights:
 
 **1. Interval Invariants: Precision Matters**
+
 Understanding interval invariants is pivotal. If, for instance, the interval is left-closed and right-closed, each binary split must meticulously retain this structure. Subsequent judgments must consistently adhere to the left-closed and right-closed paradigm.
 
 **2. Open or Closed: Does it Matter?**
+
 The choice between an open or closed interval is essentially inconsequential. What matters is a clear grasp of elements within the range after each reduction, with a vigilant eye to avoid boundary oversights.
 
 **3. Edge Cases: Tackling Scenarios**
+
 Binary search involves several nuanced scenarios, notably when dealing with boundaries. Recognizing when `l = 0` and `r = n` requires a `while (l < r)` condition due to the inaccessibility of the value at `r` in the array. Conversely, when `l = 0` and `r = n - 1`, allowing access to the value at `r`, the correct condition is `while (l <= r)`.
 
 **4. Multiple Implementations: Templates for Success**
+
 Binary search exhibits versatility in implementations. Whether the terminus is an open or closed interval can elegantly solve problems, requiring a keen understanding of conditions such as `l < r` or `l <= r`, and the choice between `mid` or `mid ± 1`. After comprehension, memorizing a template streamlines the process, eliminating confusion.
 
 **5. Beyond Basics: Varied Applications**
+
 Binary search transcends conventional uses, finding applications in diverse scenarios such as locating the first element exceeding a target or the initial element satisfying a specific condition. The core principle remains narrowing down potential locations based on satisfying problem conditions, contingent on a pre-sorted array.
 
 **6. Mid Overflow: Tackling Precision Issues**
+
 Addressing mid overflow concerns is crucial. When `mid = (l + r) / 2`, potential overflow arises if `l + r` exceeds `INT_MAX`. Mitigate this by expressing it as `mid = l + (r - l) / 2` or `mid = l + ((r - l) >> 1)`.
 
 **7. Bitwise Advantages: Optimizing Right Shifts**
+
 For positive binary numbers, right-shifting x bits equates to division by 2 to the power of x. Leveraging bitwise operations proves faster than direct division, providing an efficiency boost.
 
 **Element Removal: A Tactical Approach**
 
 **1. Fast and Slow Pointers: Streamlining Operations**
+
 Conceptually, fast pointers identify non-target elements in the original array, assigning them strategically to the new array pointed to by the slow pointer. This tactical move, although both pointers reference the same array, optimizes the removal process.
 
 **2. Common Ground with Binary Search: Navigating Similarities**
+
 Both binary search and element removal share a common thread of continually narrowing the gap between left and right. Assessing whether numbers between left and right adhere to specific conditions forms the crux of both operations.
 
 **3. Vector Size Nuances: Handling Edge Cases**
+
 In the realm of vectors, the size() function returns an unsigned integer. When the array is empty, subtracting one from this value triggers an overflow. Understanding this nuance is crucial in preventing array out-of-bounds errors.
 
 Mastering binary search and efficient element removal is not just about algorithms; it's a nuanced art that elevates your coding prowess. Delve into these intricacies, refine your strategies, and watch your code transcend to new heights of efficiency.
