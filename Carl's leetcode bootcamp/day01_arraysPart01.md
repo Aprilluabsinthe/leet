@@ -69,7 +69,7 @@ arr[4]=5;
 </code></pre>
 
 ## 704. Binary Search <a name="704"></a>
-### TD;DR
+### TL;DR
 
 [leetcode link](https://leetcode.com/problems/binary-search/description/)
 
