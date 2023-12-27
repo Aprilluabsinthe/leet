@@ -8,9 +8,7 @@
 4. [Notes for Today](#notes)
 
 ## References
-Carl's article link: 
-
-https://programmercarl.com/%E6%95%B0%E7%BB%84%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html
+[Carl's article](https://programmercarl.com/%E6%95%B0%E7%BB%84%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html)
 
 
 ## Data Structures <a name="data_structure"></a>
