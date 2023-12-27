@@ -15,7 +15,7 @@ https://programmercarl.com/%E6%95%B0%E7%BB%84%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%8
 
 ## Data Structures <a name="data_structure"></a>
 
-![Arrays](image.png)
+![Arrays](pics/image.png)
 
 An array is a linear data structure that collects elements of the same data type and stores them in contiguous and adjacent memory locations. 
 
@@ -25,17 +25,17 @@ What Are the Types of Arrays?
 There are majorly two types of arrays, they are:
 
 One-Dimensional Arrays: 
-![One-Dimensional Arrays](image-1.png)
+![One-Dimensional Arrays](pics/image-1.png)
 
 Two-Dimensional Arrays: 
-![Two-Dimensional Arrays](image-2.png)
+![Two-Dimensional Arrays](pics/image-2.png)
 
 Three-Dimensional Arrays: 
-![Three-Dimensional Arrays](image-3.png)
+![Three-Dimensional Arrays](pics/image-3.png)
 
 
 ### How Do You Declare an Array?
-![Alt text](image-4.png)
+![Alt text](pics/image-4.png)
 
 Arrays are typically defined with square brackets with the size of the arrays as its argument.
 
