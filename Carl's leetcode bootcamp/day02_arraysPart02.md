@@ -1,6 +1,6 @@
 # Day 2: Arrays Part 02
 
-## Table of Contents:
+## Contents:
 
 1. [977. Squares of a Sorted Array](#977)
 2. [209. MInimun Size Subarray Sum](#209)
@@ -8,7 +8,7 @@
 
 ## References
 
-[Carl's article](https://programmercarl.com/%E6%95%B0%E7%BB%84%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html)
+[Carl's article]([https://programmercarl.com/0977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.html](https://programmercarl.com/0977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.html)https://programmercarl.com/%E6%95%B0%E7%BB%84%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80.html)
 
 ## 977. Squares of a Sorted Array <a name="977"></a>
 
