@@ -1,16 +1,16 @@
-# Day 2: Arrays Part 02
+# Day 3: Linked List Part 01
 
 ## Contents:
 
 1. [203. Remove Linked List Elements](#203)
 2. [707. Design Linked List](#707)
-3. [206. Reverse Linked List](#59)
+3. [206. Reverse Linked List](#206)
 
 ## References
 
 [Carl's doc collections](https://docs.qq.com/doc/DUGdqYWNYeGhlaVR6)
 
-## 203. Remove Linked List ElementsSquares of a Sorted Array <a name="203"></a>
+## 203. Remove Linked List Elements<a name="203"></a>
 
 [leetcode link](https://leetcode.com/problems/remove-linked-list-elements/)
 
@@ -60,9 +60,7 @@ class Solution {
 
 **Recap**
 
-can use extra space!
-
-Was stucked a little bit for looking for O(1) solutions.
+Use dummyHead.
 
 ## 707. Design Linked List<a name="707"></a>
 
@@ -143,14 +141,11 @@ class MyLinkedList {
 }
 ```
 
-
-
-
-
 **Recap**
 
-Shoud define the simple LinkedListed sturcture outside o
+Shoud define the simple LinkedListed sturcture outside the customized class.
 
+This is a designing problem, might not be common when interviewing, but is a good challenge for overall designning.
 
 ```java
 class MyLinkedList {
@@ -262,69 +257,57 @@ class MyLinkedList {
 [leetcode link](https://leetcode.com/problems/minimum-size-subarray-sum/https://leetcode.com/problems/remove-element/description/)
 
 ```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
 class Solution {
-    public int[][] generateMatrix(int n) {
-        int[][] res = new int[n][n];
-        int maxNum = n * n;
+    public ListNode reverseList(ListNode head) {
+        ListNode pre = null;
+        ListNode cur = head;
 
-        int row = 0;
-        int col = 0;
-        int layer = 0;
-
-        for (int i = 0; i < maxNum; i++) {
-            res[row][col] = i + 1;
-
-            // max: available-1; min: n-available
-            // example: layer = 0 ; min = 0(layer) ; max = 2(3-0-1)
-            if (row == layer && col < n - layer - 1) {
-                col++;
-            } else if (col == n - layer - 1 && row < n - layer - 1) {
-                row++;
-            } else if (row == n - layer - 1 && col > layer) {
-                col--;
-            } else if (col == layer && row > layer) {
-                row--;
-                if (row == layer + 1) {
-                    layer++;
-                }
-            }
-
+        while(cur != null){
+            ListNode nxtTemp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = nxtTemp;
         }
-        return res;
+        return pre;
     }
 }
 ```
 
-**Another method**
+**Complexity analysis**
 
-Use a 4 direction 2D array to control the direction.
-
-```java
-class Solution {
-    public int[][] generateMatrix(int n) {
-        int[][] result = new int[n][n];
-
-        int number = 1;
-        int dir[][] = { { 0, 1 }, { 1, 0 }, { 0, -1 }, { -1, 0 } }; // This mindset can be reused for other Problems.
-        int col = 0, row = 0;
-        int dirSign = 0;
-
-        while (number <= n * n) {
-            result[row][col] = number;
-            number++;
-
-            int r = Math.floorMod(row + dir[dirSign][0], n);
-            int c = Math.floorMod(col + dir[dirSign][1], n);
-
-            // If has value, change direction.
-            if (result[r][c] != 0)
-                dirSign = (dirSign + 1) % 4;
-            row += dir[dirSign][0];
-            col += dir[dirSign][1];
-        }
-        return result;
-    }
-}
-```
+* Time complexity : O(n)
+  Assume that nnn is the list's length, the time complexity is O(n)
+* Space complexity : O(1)
 
 ## Notes for Today <a name="notes"></a>
+
+```java
+// Definition for singly-linked list.
+public class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+}
+
+```
