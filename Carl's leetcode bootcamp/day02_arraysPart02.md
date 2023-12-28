@@ -4,7 +4,7 @@
 
 1. [977. Squares of a Sorted Array](#977)
 2. [209. MInimun Size Subarray Sum](#209)
-3. [Spiral Matrix II](#59)
+3. [59. Spiral Matrix II](#59)
 
 ## References
 
@@ -49,7 +49,7 @@ Was stucked a little bit for looking for O(1) solutions.
 
 ## 209. Minimun Size Subarray Sum<a name="209"></a>
 
-[leetcode link](https://leetcode.com/problems/minimum-size-subarray-sum/https://leetcode.com/problems/remove-element/description/)
+[leetcode link](https://leetcode.com/problems/minimum-size-subarray-sum/)
 
 ```java
 class Solution {
@@ -87,7 +87,7 @@ The essential of sliding window is the way we move the starting index.
 
 ## 59. Spiral Matrix II <a name="59"></a>
 
-[leetcode link](https://leetcode.com/problems/minimum-size-subarray-sum/https://leetcode.com/problems/remove-element/description/)
+[leetcode link](https://leetcode.com/problems/spiral-matrix-ii/description/)
 
 ```java
 class Solution {
