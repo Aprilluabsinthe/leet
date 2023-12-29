@@ -1,4 +1,4 @@
-# Day 3: Linked List Part 01
+# Day 4: Linked List Part 02
 
 ## Contents:
 
@@ -371,24 +371,3 @@ public class Solution {
 ```
 
 ## Notes for Today <a name="notes"></a>
-
-```java
-// Definition for singly-linked list.
-public class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
-```
