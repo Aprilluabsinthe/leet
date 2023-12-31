@@ -1,4 +1,4 @@
-# Day 4: Linked List Part 02
+# Day 5: HashMap Part 01
 
 ## Contents:
 
