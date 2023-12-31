@@ -6,6 +6,7 @@
 * [349. Intersection of Two Arrays](#349-intersection-of-two-arrays)
 * [1. Two Sum](#1-two-sum)
 * [454. 4Sum II](#454-4sum-ii)
+* [202. Happy Number](#202-happy-number)
 
 ## References
 
@@ -101,6 +102,9 @@ class Solution {
 * Space complexity: `O(n)`
   The extra space required depends on the number of items stored in the hash table, which stores at most n elements.
 
+<a name="202-happy-number)"></a>
+
+## [202. Happy Number](https://leetcode.com/problems/happy-number/)
 
 ```java
 class Solution {
