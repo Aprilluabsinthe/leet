@@ -5,7 +5,6 @@
 * [242. Valid Anagram](#242-valid-anagram)
 * [349. Intersection of Two Arrays](#349-intersection-of-two-arrays)
 * [1. Two Sum](#1-two-sum)
-* [454. 4Sum II](#454-4sum-ii)
 * [202. Happy Number](#202-happy-number)
 
 ## References
@@ -135,34 +134,6 @@ class Solution {
             n /= 10;
         }
         return sum;
-    }
-}
-```
-
-<!-- TOC --><a name="454-4sum-ii)"></a>
-
-## [454. 4 Sum II](https://leetcode.com/problems/4sum-ii/)
-
-```java
-class Solution {
-    public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
-        int n = nums1.length;
-        HashMap<Integer, Integer> sumToOccuranceMap1 = new HashMap<>();
-        int res = 0;
-
-        for (int num1 : nums1) {
-            for (int num2 : nums2) {
-                sumToOccuranceMap1.put(num1 + num2, sumToOccuranceMap1.getOrDefault(num1 + num2, 0) + 1);
-            }
-        }
-
-        for (int num3 : nums3) {
-            for (int num4 : nums4) {
-                res += sumToOccuranceMap1.getOrDefault(0 - num3 - num4, 0);
-            }
-        }
-        return res;
-
     }
 }
 ```
