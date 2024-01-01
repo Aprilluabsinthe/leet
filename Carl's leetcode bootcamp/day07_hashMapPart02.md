@@ -5,6 +5,7 @@
 * [454. 4Sum II](#454-4sum-ii)
 * [383. Ransom Note](#383-ransom-note)
 * [15. 3sum](#15-3-sum)
+* [18. 4Sum](#18-four-sum)
 
 ## References
 
@@ -38,10 +39,7 @@ class Solution {
 }
 ```
 
-
-
 <!-- TOC --><a name="383-ransom-note)"></a>
-
 
 ## [383. Ransom Note](https://leetcode.com/problems/ransom-note/)
 
@@ -93,10 +91,7 @@ class Solution {
 }
 ```
 
-
-
 <!-- TOC --><a name="15-3-sum)"></a>
-
 
 ## [15. 3Sum](https://leetcode.com/problems/3sum/)
 
@@ -172,9 +167,57 @@ class Solution {
 }
 ```
 
-
 **Complexity Analysis**
 
 * Time Complexity: `O(n^2)`. `twoSumII` is `O(n) `and we call it nnn times.
   Sorting the array takes `O(nlog⁡n)`, so overall complexity is `O(nlog{n} + n^2).` This is asymptotically equivalent to `O(n^2)`.
 * Space Complexity: from `O(log⁡n)` to `O(n)` depending on the implementation of the sorting algorithm. For the purpose of complexity analysis, we ignore the memory required for the output.
+
+<a name="18-four-sum"></a>
+
+## [18. 4Sum](https://leetcode.com/problems/4sum/)
+
+```java
+class Solution {
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+        Arrays.sort(nums);
+        List<List<Integer>> res = new ArrayList();
+
+        // [-2,-1,0,0,1,2]
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > 0 && nums[i] > target) {
+                return res;
+            }
+
+            if (i > 0 && nums[i - 1] == nums[i]) {
+                continue;
+            }
+
+            for (int j = i + 1; j < nums.length; j++) {
+                if (j > i + 1 && nums[j - 1] == nums[j]) {
+                    continue;
+                }
+
+                int lo = j + 1, hi = nums.length - 1;
+                while (lo < hi) {
+                    int sum = nums[i] + nums[j] + nums[lo] + nums[hi];
+                    if (sum > target) {
+                        hi--;
+                    } else if (sum < target) {
+                        lo++;
+                    } else {
+                        res.add(Arrays.asList(nums[i], nums[j], nums[lo++], nums[hi--]));
+                        while (lo < hi && nums[lo] == nums[lo - 1])
+                            lo++;
+                        while (lo < hi && nums[hi] == nums[hi + 1])
+                            hi--;
+                    }
+                }
+            }
+        }
+        return res;
+    }
+}
+```
+
+Remeber how to cut the

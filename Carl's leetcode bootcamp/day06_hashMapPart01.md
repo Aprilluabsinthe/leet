@@ -9,7 +9,7 @@
 
 ## References
 
-[Carl's doc collections](https://docs.qq.com/doc/DUFNjYUxYRHRVWklp)
+[Carl's doc collections](https://docs.qq.com/doc/DUEtFSGdreWRuR2p4)
 
 <!-- TOC --><a name="242-valid-anagram"></a>
 
