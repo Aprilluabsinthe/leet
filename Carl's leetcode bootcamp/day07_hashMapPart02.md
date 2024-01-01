@@ -185,6 +185,7 @@ class Solution {
 
         // [-2,-1,0,0,1,2]
         for (int i = 0; i < nums.length; i++) {
+            // cut of
             if (nums[i] > 0 && nums[i] > target) {
                 return res;
             }
@@ -220,4 +221,4 @@ class Solution {
 }
 ```
 
-Remeber how to cut the
+Remeber how to cut of the cases.
