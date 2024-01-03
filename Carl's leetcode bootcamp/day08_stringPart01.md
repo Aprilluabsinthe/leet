@@ -1,4 +1,4 @@
-# Day 6: HashMap Part 01
+# Day 8: String Part 01
 
 ## Contents
 
