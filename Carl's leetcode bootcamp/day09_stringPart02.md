@@ -3,6 +3,7 @@
 ## Contents
 
 * [28. Find the index of the first occurence](#28)
+* [459. Repeated Substring Pattern](#459)
 * ## References
 
 [Carl's doc collections](https://docs.qq.com/doc/DUGdsY2JFaFhDRVZH)
@@ -72,6 +73,11 @@ class Solution {
     * -1 for each next array
     * keep next array unchanged
 
+<a name="459"></a>
+
+
+
+[459. Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern/)
 
 ```java
 class Solution {
