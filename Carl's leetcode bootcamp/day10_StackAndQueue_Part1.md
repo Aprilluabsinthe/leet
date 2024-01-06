@@ -1,4 +1,4 @@
-# Day 9: String Part 02
+# Day 10: Stack And Queue Part 01
 
 ## Contents
 
@@ -66,7 +66,7 @@ class MyQueue {
 
 ## [225. Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/)
 
-### Approach 1: 2 Queue = LinkedList()
+### Approach 1: 2 LinkedList Queue
 
 ```java
 class MyStack {
@@ -112,7 +112,7 @@ class MyStack {
  */
 ```
 
-### Approach 2: 2 ArrayDeque()
+### Approach 2: 2 ArrayDeque Queue
 
 ```java
 class MyStack {
@@ -149,7 +149,7 @@ class MyStack {
 }
 ```
 
-### Approach 2: 1 Queue
+### Approach 3: 1 Queue
 
 ```java
 class MyStack {
