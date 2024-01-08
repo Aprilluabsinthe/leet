@@ -3,6 +3,7 @@
 ## Contents
 
 * [239. Sliding Window Maximum](#239)
+* [347. Top K Frequent Elements](#347)
 * ## References
 
 [Carl's doc collections](https://docs.qq.com/doc/DUHNpa3F4b2dMUWJ3)
@@ -37,6 +38,10 @@ class Solution {
 }
 ```
 
+<a name="347"></a>
+
+
+## [347. Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/)
 
 ```java
 class Solution {
