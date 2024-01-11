@@ -49,8 +49,6 @@ It is a type of binary tree in which the difference between the height of the le
 ![Balanced Binary Tree](https://cdn.programiz.com/sites/tutorial2program/files/height-balanced_1.png)
 
 
-
-
 | **完美二叉树** | Perfect Binary Tree | Every node except the leaf nodes have two children and every level (last level too) is completely filled.**除了叶子结点之外的每一个结点都有两个孩子，每一层(当然包含最后一层)都被完全填充。** |
 | - | - | - |
 | **完全二叉树** | Complete Binary Tree | Every level except the last level is completely filled and all the nodes are left justified.**除了最后一层之外的其他每一层都被完全填充，并且所有结点都保持向左对齐。** |
@@ -68,13 +66,9 @@ It is a type of binary tree in which the difference between the height of the le
 
 ![Binary Search Tree](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221215114732/bst-21.png)
 
-
 ### AVL Tree
 
 In computer science, an AVL tree (named after inventors Adelson-Velsky and Landis) is **a self-balancing binary search tree**. In an AVL tree, the heights of the two child subtrees of any node differ by at most one; if at any time they differ by more than one, rebalancing is done to restore this property.
-
-
-
 
 ## Binary Tree Representation
 
@@ -99,5 +93,21 @@ class Node {
   key = item;
   left = right = null;
   }
+}
+```
+
+```java
+public class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
 }
 ```
