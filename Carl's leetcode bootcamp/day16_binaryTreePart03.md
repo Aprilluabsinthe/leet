@@ -1,10 +1,12 @@
-# Day 16: Binary tree Part 02
+# Day 16: Binary tree Part 03
 
 ## [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 
 ### Postorder Traversal
 
 Postorder Traversal is used for calculation max HEIGHT.
+
+(left- rigt - mid)
 
 But ROOT's  max HEIGHT = ROOT's DEPTH.
 
@@ -42,9 +44,11 @@ class Solution {
 
 
 
+### preorder traversal
 
+If it is not root, we should use preorder to calculate depth. (mid- left - right)
 
-```java
+```cpp
 class Solution {
 public:
     int result;
