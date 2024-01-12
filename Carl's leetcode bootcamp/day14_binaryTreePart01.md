@@ -1,5 +1,7 @@
 # Day 14: Binary tree Part 02
 
+## 102
+
 ```java
 /**
  * Definition for a binary tree node.
@@ -48,7 +50,7 @@ class Solution {
 
         while(!que.isEmpty()){
             List<Integer> list = new ArrayList<>();
-      
+  
             int len = que.size();
 
             while(len > 0){
@@ -219,6 +221,10 @@ Can also optimize by adding right kid first
                     queue.offer(tmp.left);
 ```
 
+## [637. Average of Levels in Binary Tree](https://leetcode.com/problems/average-of-levels-in-binary-tree/)
+
+Pay attention to the range of Integer.
+
 ```java
 /**
  * Definition for a binary tree node.
@@ -246,7 +252,7 @@ class Solution {
             queue.offer(root);
 
         while (!queue.isEmpty()) {
-            double levelSum = 0;
+            double levelSum = 0; // DO NOT USE INTEGER
 
             int size = queue.size();
 
