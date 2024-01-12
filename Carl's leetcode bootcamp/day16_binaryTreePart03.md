@@ -2,6 +2,14 @@
 
 ## [104. Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 
+### Postorder Traversal
+
+Postorder Traversal is used for calculation max HEIGHT.
+
+But ROOT's  max HEIGHT = ROOT's DEPTH.
+
+We can use Postorder Traversal;
+
 ```java
 /**
  * Definition for a binary tree node.
@@ -30,6 +38,40 @@ class Solution {
 
     }
 }
+```
+
+
+
+
+
+```java
+class Solution {
+public:
+    int result;
+    void getDepth(TreeNode* node, int depth) {
+        result = depth > result ? depth : result; // 中
+
+        if (node->left == NULL && node->right == NULL) return ;
+
+        if (node->left) { // 左
+            depth++;    // 深度+1
+            getDepth(node->left, depth);
+            depth--;    // 回溯，深度-1
+        }
+        if (node->right) { // 右
+            depth++;    // 深度+1
+            getDepth(node->right, depth);
+            depth--;    // 回溯，深度-1
+        }
+        return ;
+    }
+    int maxDepth(TreeNode* root) {
+        result = 0;
+        if (root == NULL) return result;
+        getDepth(root, 1);
+        return result;
+    }
+};
 ```
 
 ## [559. Maximum Depth of N-ary Tree](https://leetcode.com/problems/maximum-depth-of-n-ary-tree/)
@@ -143,7 +185,6 @@ class Solution {
 }
 ```
 
-
 ### for Complete Tree
 
 ```java
@@ -191,14 +232,11 @@ class Solution {
 }
 ```
 
-
 ## Note
 
 1. Pay attention to the defination of "min depth of the binary tree".
 
 ![111.二叉树的最小深度](https://code-thinking.cdn.bcebos.com/pics/111.%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6.png)
-
-
 
 2. Complete Tree
 
