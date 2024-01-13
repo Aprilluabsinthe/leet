@@ -164,16 +164,17 @@ class Solution {
             return 0;
 
         int leftValue = sumOfLeftLeaves(root.left);
-        int rightValue = sumOfLeftLeaves(root.right);
-
-        int midValue = 0;
         if (root.left != null && root.left.left == null && root.left.right == null) {
-            midValue = root.left.val;
+            leftValue = root.left.val;
         }
 
-        int sum = midValue + leftValue + rightValue;
+        int rightValue = sumOfLeftLeaves(root.right);
+
+        int sum = leftValue + rightValue;
         return sum;
     }
 
 }
 ```
+
+![图二](https://code-thinking-1253855093.file.myqcloud.com/pics/20220902165805.png)
