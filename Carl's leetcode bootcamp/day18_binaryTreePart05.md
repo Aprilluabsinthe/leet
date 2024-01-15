@@ -98,3 +98,56 @@ class Solution {
     }
 }
 ```
+
+## [112. Path Sum](https://leetcode.com/problems/path-sum/)
+
+
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode() {}
+ * TreeNode(int val) { this.val = val; }
+ * TreeNode(int val, TreeNode left, TreeNode right) {
+ * this.val = val;
+ * this.left = left;
+ * this.right = right;
+ * }
+ * }
+ */
+class Solution {
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if (root == null)
+            return false;
+        return traversal(root, targetSum - root.val);
+    }
+
+    public boolean traversal(TreeNode node, int count) {
+        if (node.left == null && node.right == null && count == 0) {
+            return true;
+        }
+        if (node.left == null && node.right == null) {
+            return false;
+        }
+
+        if (node.left != null) { // left
+            count -= node.left.val;
+            if (traversal(node.left, count))
+                return true;
+            count += node.left.val;
+        }
+
+        if (node.right != null) {// right
+            count -= node.right.val;
+            if (traversal(node.right, count))
+                return true;
+            count += node.right.val;
+        }
+        return false;
+    }
+}
+```
