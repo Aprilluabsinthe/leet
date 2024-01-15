@@ -101,8 +101,6 @@ class Solution {
 
 ## [112. Path Sum](https://leetcode.com/problems/path-sum/)
 
-
-
 ```java
 /**
  * Definition for a binary tree node.
@@ -148,6 +146,59 @@ class Solution {
             count += node.right.val;
         }
         return false;
+    }
+}
+```
+
+## [113. Path Sum II](https://leetcode.com/problems/path-sum-ii/)
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ * int val;
+ * TreeNode left;
+ * TreeNode right;
+ * TreeNode() {}
+ * TreeNode(int val) { this.val = val; }
+ * TreeNode(int val, TreeNode left, TreeNode right) {
+ * this.val = val;
+ * this.left = left;
+ * this.right = right;
+ * }
+ * }
+ */
+class Solution {
+    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+        List<List<Integer>> res = new ArrayList<>();
+        if(root == null) return res;
+
+        List<Integer> path = new LinkedList<>();
+        preorderdfs(root, targetSum, res, path);
+        return res;
+    
+    }
+
+    public void preorderdfs(TreeNode node, int targetSum, List<List<Integer>> res, List<Integer> path) {
+        path.add(node.val);
+        // left
+        if (node.left == null && node.right == null) {
+            if (targetSum - node.val == 0) {
+                res.add(new ArrayList<>(path));
+            }
+            return; // if leaf and sum != target, stop here;
+        }
+
+        if (node.left != null) {
+            preorderdfs(node.left, targetSum - node.val, res, path);
+            path.remove(path.size() - 1);
+        }
+
+        if (node.right != null) {
+            preorderdfs(node.right, targetSum - node.val, res, path);
+            path.remove(path.size() - 1);
+        }
+
     }
 }
 ```
