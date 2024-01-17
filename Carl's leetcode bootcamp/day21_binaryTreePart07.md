@@ -1,5 +1,8 @@
-# Day 20: Binary tree Part 06
+# Day 21: Binary tree Part 07
 
+## [530. Minimum Absolute Difference in BST](https://leetcode.com/problems/minimum-absolute-difference-in-bst/)
+
+Two Pointer for binary tree
 
 ```java
 /**
