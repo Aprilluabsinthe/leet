@@ -118,3 +118,33 @@ public:
     }
 };
 ```
+
+
+## 977. Square of a sorted array
+
+---
+
+```
+class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> result(n);
+        int left = 0;
+        int right = n;
+        int index = n - 1;
+
+        while (index >= 0) {
+            if (abs(nums[left]) < abs(nums[right - 1])) {
+                result[index] = nums[right - 1] * nums[right - 1];
+                right--;
+            } else {
+                result[index] = nums[left] * nums[left];
+                left++;
+            }
+            index--;
+        }
+        return result;
+    }
+};
+```
